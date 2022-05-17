@@ -23,12 +23,13 @@ _start:
     mov r1,#0	
     mov r2, r6
     mov r10, #0
+    mov r12, #0
     b secondLoop
     #for loop to clear the entire thing 
 firstLoop:
     cmp r0, #8
     beq _start_exit
-    add r0,#1
+    add r12,#1
     mov r1,#0
     mov r10,#0
     b secondLoop
@@ -39,6 +40,7 @@ secondLoop:
     beq firstLoop
     #setPixel to clear
     bl setPixel
+    mov r0,r12
     add r10,#1
     mov r1,r10 
     b secondLoop
