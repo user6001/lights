@@ -82,7 +82,8 @@ _start:
     bl setPixel
     mov r2,r6
     mov r0,#5
-    mov r1,#4    
+    mov r1,#4
+    bl setPixel    
     #set 6,2 7,1 6,5 7,6
     mov r2,r6
     mov r0,#6
@@ -100,7 +101,7 @@ _start:
     mov r2,r6
     mov r0,#7
     mov r1,#6    
-
+    bl setPixel
     bl closefb
 
 _start_exit: 
