@@ -25,7 +25,7 @@ _start:
     mov r10, #0
     mov r12, #0
     b secondLoop
-    #for loop to clear the entire thing 
+   
 firstLoop:
     cmp r0, #8
     beq _start_exit
@@ -33,21 +33,17 @@ firstLoop:
     mov r1,#0
     mov r10,#0
     b secondLoop
-    ####added lines here it comes up at 0,8
     
 secondLoop:    
     cmp r1, #8
     beq firstLoop
     #setPixel to clear
-    bl setPixel
     mov r0,r12
+    bl setPixel
     add r10,#1
     mov r1,r10 
     b secondLoop
-   ## add r0,r0,#1 
-   ## b firstLoop
-	#cleanup the data structures created by openfb and close the framebuffer device
-	##bl closefb
+   
 
 _start_exit: 
 	#clean exit
