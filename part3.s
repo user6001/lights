@@ -10,7 +10,7 @@ _start:
 
 
     
-    #set the color to blue
+    #set the color to red
     mov r8,r0
     mov r0,#31
     mov r1,#0
