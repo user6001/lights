@@ -27,11 +27,10 @@ _start:
     #for loop to clear the entire thing 
 firstLoop:
     cmp r0, #8
-    bl closefb
-    cmp r0, #8
     beq _start_exit
     add r0,#1
     mov r1,#0
+    mov r10,#0
     b secondLoop
     ####added lines here it comes up at 0,8
     
