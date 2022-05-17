@@ -19,25 +19,32 @@ _start:
 	mov r6,r0
     
     #initializing the for loop variables
-    mov r9,#0
-	mov r10,#0	
-
+    mov r0,#0
+    mov r1,#0	
+    mov r2, r6
+    b secondLoop
     #for loop to clear the entire thing 
 firstLoop:
-    add r9,r9,#1
+    cmp r0, #8
+    bl closefb
+    cmp r0, #8
+    beq _start_exit
+    add r0,#1
+    mov r1,#0
+    b secondLoop
+    ####added lines here it comes up at 0,8
+    
 secondLoop:    
-    add r10,r10, #1
-	mov r0,r9
-	mov r1,r10
-	mov r2,#0
+    cmp r1, #8
+    beq firstLoop
     #setPixel to clear
     bl setPixel
-	cmp r10,#8
-    bgt secondLoop
-	cmp r9,#8
-    bgt firstLoop
+    add r1,r1,#1 
+    b secondLoop
+   ## add r0,r0,#1 
+   ## b firstLoop
 	#cleanup the data structures created by openfb and close the framebuffer device
-	bl closefb
+	##bl closefb
 
 _start_exit: 
 	#clean exit
