@@ -38,8 +38,8 @@ secondLoop:
     cmp r1, #8
     beq firstLoop
     #setPixel to clear
-    mov r0,r12
     bl setPixel
+    mov r0,r12
     add r10,#1
     mov r1,r10 
     b secondLoop
