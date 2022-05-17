@@ -27,7 +27,7 @@ _start:
     b firstLoop
 firstLoop:
     cmp r0, #8
-    b thirdLoop
+    beq thirdLoop
     #set pixel to red
     bl setPixel
     add r12,#1
